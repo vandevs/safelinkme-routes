@@ -1,9 +1,3 @@
-// safelinkme-shortcode-redirect
-// Handles safelinkme.net/* — checks if path is a valid shortcode.
-// If yes -> redirect to verify.safelinkme.net
-// If no  -> forward request to the safelinkme-pages Pages project
-//           (so signin/signup/statis/etc keep working untouched)
-
 const PAGES_HOSTNAME = 'safelinkme-pages.pages.dev';
 
 export default {
@@ -15,8 +9,6 @@ export default {
     if (path !== '/') {
       const code = path.slice(1).split('/')[0];
 
-      // Only treat as shortcode if it looks like one (avoid pointless
-      // DB hits for obvious static assets / multi-segment paths)
       if (code && !code.includes('.')) {
         const link = await env.DB.prepare(
           'SELECT code, status, deleted_at FROM links WHERE code = ?'
