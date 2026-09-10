@@ -1,4 +1,4 @@
-name = "safelinkme-shortcode-redirect"
+name = "safelinkme-routes"
 main = "src/index.js"
 compatibility_date = "2024-09-01"
 
