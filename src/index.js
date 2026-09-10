@@ -5,7 +5,6 @@ export default {
     const url = new URL(request.url);
     const path = url.pathname;
 
-    // Root path ("/") is the landing page -> always forward to Pages
     if (path !== '/') {
       const code = path.slice(1).split('/')[0];
 
@@ -23,7 +22,6 @@ export default {
       }
     }
 
-    // Not a valid/active shortcode -> forward untouched to Pages project
     const pagesUrl = new URL(request.url);
     pagesUrl.hostname = PAGES_HOSTNAME;
 
