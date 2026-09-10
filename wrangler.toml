@@ -1,0 +1,12 @@
+name = "safelinkme-shortcode-redirect"
+main = "src/index.js"
+compatibility_date = "2024-09-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "safelinkme-db"
+database_id = "29c09697-0ef4-4080-bfc1-df55030d5bc0"
+
+[[routes]]
+pattern = "safelinkme.net/*"
+zone_name = "safelinkme.net"
